@@ -1,0 +1,18 @@
+﻿@model IndexViewModel
+
+<div class="text-center">
+    <h1 class="display-4">Welcome to our Trendyol web-app!</h1>
+    <h2 class="display-4">You can read discount coupons for our products!</h2>
+
+    <p>Read our discount coupon:</p>
+    <p>Coupon: <span style="color:forestgreen;">@Model.Cupon</span></p>
+
+    <!-- Button for reading/unreading coupon -->
+    <form method="get" action="@(Model.CuponReaden ? "/Home/UnreadCupon" : "/Home/ReadCupon")" style="display:inline;">
+        <button type="submit" class="btn btn-primary" style="cursor:pointer;">
+            @(Model.CuponReaden ? "Unread" : "Read")
+        </button>
+    </form>
+
+    <p>Coupons left: @Model.CuponsLeft</p>
+</div>
